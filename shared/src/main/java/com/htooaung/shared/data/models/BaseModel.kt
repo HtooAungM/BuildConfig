@@ -9,15 +9,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 abstract class BaseModel {
-    protected var mRestaurantApi: RestaurantApi
-    init {
+    protected lateinit var mRestaurantApi: RestaurantApi
+
+    fun initRetrofitWithBaseUrl(baseurl: String){
         val mOkHttpClient = OkHttpClient.Builder()
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL_FOOD_PANDA)
+            .baseUrl(baseurl)
             .client(mOkHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.htooaung.buildConfig.R
 import com.htooaung.buildConfig.adapters.RestaurantListAdapter
 import com.htooaung.buildConfig.databinding.ActivityMainBinding
 import com.htooaung.shared.data.vos.RestaurantVO
@@ -23,9 +24,15 @@ class MainActivity : AppCompatActivity(), MainView {
         setContentView(binding.root)
 
         setUpPresenter()
+//        setUpToolBar()
         setUpRecyclerView()
+
     }
 
+//    private fun setUpToolBar(){
+//        setSupportActionBar(binding.toolBar)
+//        supportActionBar?.title = getString(R.string.app_name)
+//    }
     private fun setUpPresenter(){
         mPresenter = ViewModelProvider(this)[MainPresenterImpl::class.java]
         mPresenter.initPresenter(this)
