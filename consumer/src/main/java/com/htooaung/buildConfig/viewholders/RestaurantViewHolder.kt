@@ -1,5 +1,6 @@
 package com.htooaung.buildConfig.viewholders
 
+import android.annotation.SuppressLint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,6 +13,7 @@ class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     init{
         binding = ViewholderRestaurantBinding.bind(itemView)
     }
+    @SuppressLint("SetTextI18n")
     fun bindData(data: RestaurantVO){
         Glide
             .with(itemView.context)

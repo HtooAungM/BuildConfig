@@ -36,6 +36,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+//    flavorDimensions "food-delivery-app-flavor"
+//
+//    productFlavors{
+//        //Key
+//        def ENDPOINT_FIELD = "ENDPOINT"
+//
+//        //Value
+//
+//        def ENDPOINT_FOOD_PANDA = "\"https://02846b20-a603-4e2e-9c83-f6db1a00074a.mock.pstmn.io\""
+//        def ENDPOINT_GRAB = "\"https://521af25d-62d1-4dfd-952a-41ca124a70cf.mock.pstmn.io\""
+//    }
 }
 
 dependencies {

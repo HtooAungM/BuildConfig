@@ -12,6 +12,7 @@ class MainPresenterImpl: MainPresenter,ViewModel() {
 
     override fun initPresenter(view: MainView) {
         mView = view
+        onUriReady()
     }
 
     override fun onUriReady() {
@@ -20,6 +21,4 @@ class MainPresenterImpl: MainPresenter,ViewModel() {
             onFailure = {mView?.showError(it)}
         )
     }
-
-
 }

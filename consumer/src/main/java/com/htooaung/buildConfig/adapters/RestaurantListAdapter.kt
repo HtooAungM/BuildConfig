@@ -8,7 +8,7 @@ import com.htooaung.buildConfig.R
 import com.htooaung.buildConfig.viewholders.RestaurantViewHolder
 import com.htooaung.shared.data.vos.RestaurantVO
 
-class RestaurantListAdapter: RecyclerView.Adapter<RestaurantViewHolder>() {
+class   RestaurantListAdapter: RecyclerView.Adapter<RestaurantViewHolder>() {
     private var mData: List<RestaurantVO> = listOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_restaurant,parent,false)
@@ -16,7 +16,7 @@ class RestaurantListAdapter: RecyclerView.Adapter<RestaurantViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return mData.size
+        return mData.count()
     }
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {

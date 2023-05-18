@@ -16,7 +16,7 @@ import com.htooaung.shared.showSnackBar
 class MainActivity : AppCompatActivity(), MainView {
     private lateinit var mPresenter: MainPresenter
     private lateinit var binding: ActivityMainBinding
-    private lateinit var mAdapter: RestaurantListAdapter
+    private var mAdapter: RestaurantListAdapter = RestaurantListAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     private fun setUpRecyclerView(){
-        mAdapter = RestaurantListAdapter()
         binding.rvRestaurantList.adapter = mAdapter
         binding.rvRestaurantList.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
     }
